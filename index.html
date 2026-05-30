@@ -395,28 +395,31 @@
           <h2 class="h2 article-title">Contact</h2>
         </header>
 
-        <section class="contact-form">
+       <section class="contact-form">
 
-          <h3 class="h3 form-title">Get In Touch</h3>
+  <h3 class="h3 form-title">Get In Touch</h3>
 
-          <form action="#" class="form" data-form>
+  <form class="form" data-form id="ghl-contact-form">
 
-            <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
-            </div>
+    <div class="input-wrapper">
+      <input type="text" id="input-name" class="form-input" placeholder="Full name" required data-form-input>
+      <input type="email" id="input-email" class="form-input" placeholder="Email address" required data-form-input>
+    </div>
 
-            <textarea name="message" class="form-input" placeholder="Tell me about your project" required data-form-input></textarea>
+    <textarea id="input-message" class="form-input" placeholder="Tell me about your project" required data-form-input></textarea>
 
-            <button class="form-btn" type="submit" disabled data-form-btn>
-              <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
-            </button>
+    <button class="form-btn" type="submit" disabled data-form-btn>
+      <ion-icon name="paper-plane"></ion-icon>
+      <span>Send Message</span>
+    </button>
 
-          </form>
+  </form>
 
-        </section>
+  <p id="form-success" style="display:none; color: var(--orange-yellow-crayola); margin-top: 15px;">
+    Message sent successfully!
+  </p>
 
+</section>
       </article>
 
     </div>
