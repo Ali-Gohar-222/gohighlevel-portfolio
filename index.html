@@ -529,7 +529,26 @@
         card.style.transform = 'perspective(600px) rotateX(0) rotateY(0) translateY(0)';
       });
     });
+// ============ GOOGLE FORM SUBMISSION ============
+const contactForm = document.getElementById('ghl-contact-form');
+if (contactForm) {
+  contactForm.addEventListener('submit', function (e) {
+    e.preventDefault();
 
+    const name = document.getElementById('input-name').value;
+    const email = document.getElementById('input-email').value;
+    const message = document.getElementById('input-message').value;
+
+    const url = `https://docs.google.com/forms/d/e/1FAIpQLSfkj_h5HaFxmWMASs8UuqDxJOF_HWG9MGFeRkuRs6nPhoIgqw/formResponse?entry.1481375818=${encodeURIComponent(name)}&entry.952873159=${encodeURIComponent(email)}&entry.1769165155=${encodeURIComponent(message)}`;
+
+    fetch(url, { method: 'POST', mode: 'no-cors' })
+      .then(() => {
+        document.getElementById('form-success').style.display = 'block';
+        contactForm.reset();
+        contactForm.querySelector('[data-form-btn]').setAttribute('disabled', '');
+      });
+  });
+}
   </script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
